@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-sans antialiased;
+  }
+  
+  :root {
+    --gradient-primary: linear-gradient(135deg, #5c7cfa 0%, #845ef7 50%, #f06595 100%);
+    --gradient-accent: linear-gradient(135deg, #f06595 0%, #845ef7 100%);
+    --gradient-dark: linear-gradient(135deg, #1A1B1E 0%, #25262B 100%);
+  }
+}
+
+@layer components {
+  .glass {
+    @apply bg-white/70 dark:bg-dark-700/70 backdrop-blur-xl border border-white/20 dark:border-dark-400/20;
+  }
+  
+  .glass-card {
+    @apply bg-white/80 dark:bg-dark-600/80 backdrop-blur-xl border border-gray-200/50 dark:border-dark-400/50 rounded-2xl shadow-lg shadow-gray-200/50 dark:shadow-dark-900/50;
+  }
+  
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-500 via-purple-500 to-accent-500;
+  }
+  
+  .gradient-btn {
+    @apply bg-gradient-to-r from-primary-500 via-purple-500 to-accent-500 text-white font-semibold px-6 py-3 rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-300;
+  }
+  
+  .gradient-border {
+    @apply relative before:absolute before:inset-0 before:rounded-2xl before:p-[1px] before:bg-gradient-to-r before:from-primary-500 before:via-purple-500 before:to-accent-500 before:-z-10;
+  }
+  
+  .input-field {
+    @apply w-full px-4 py-3 rounded-xl bg-gray-50 dark:bg-dark-600 border border-gray-200 dark:border-dark-400 text-gray-900 dark:text-gray-100 placeholder-gray-400 dark:placeholder-dark-200 focus:outline-none focus:ring-2 focus:ring-primary-500/50 focus:border-primary-500 transition-all duration-300;
+  }
+  
+  .sidebar-link {
+    @apply flex items-center gap-3 px-4 py-3 rounded-xl text-gray-600 dark:text-dark-100 hover:bg-primary-50 dark:hover:bg-dark-500 hover:text-primary-600 dark:hover:text-primary-400 transition-all duration-300 font-medium;
+  }
+  
+  .sidebar-link.active {
+    @apply bg-primary-50 dark:bg-dark-500 text-primary-600 dark:text-primary-400 shadow-sm;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-300 dark:bg-dark-400 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-400 dark:bg-dark-300;
+}
+
+/* Selection */
+::selection {
+  @apply bg-primary-500/20 text-primary-900 dark:text-primary-100;
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
