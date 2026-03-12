@@ -181,10 +181,10 @@ Backend
 
 npm run server
 
-🔗 Live Demo
-
-[ (https://skillswap-11.vercel.app/dashboard)]
-
 Frontend
 
 npm start
+
+🔗 Live Demo
+
+(https://skillswap-11.vercel.app/)
