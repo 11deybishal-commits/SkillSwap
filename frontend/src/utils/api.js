@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'https://skillswap-5m4l.onrender.com/api',
+  baseURL: 'http://localhost:1000/api',
   headers: {
     'Content-Type': 'application/json'
   }
@@ -23,8 +23,14 @@ api.interceptors.response.use(
   (response) => response,
   (error) => {
     if (error.response?.status === 401) {
-      localStorage.removeItem('skillswap-token');
-      window.location.href = '/login';
+      const url = error.config?.url;
+      // Exclude login and signup routes from automatic redirect
+      if (url && !url.includes('/auth/login') && !url.includes('/auth/signup')) {
+        localStorage.removeItem('skillswap-token');
+        if (window.location.pathname !== '/login') {
+          window.location.href = '/login';
+        }
+      }
     }
     return Promise.reject(error);
   }
