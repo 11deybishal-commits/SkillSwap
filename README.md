@@ -96,7 +96,7 @@ Frontend  →  Backend API  →  Database
 ⚙️ Tech Stack
 Frontend
 
-[ Add Frontend Technologies Here ]
+
 
 Example:
 
@@ -108,7 +108,7 @@ Redux / Context API
 
 Backend
 
-[ Add Backend Technologies Here ]
+
 
 Example:
 
@@ -118,7 +118,7 @@ Express.js
 
 Database
 
-[ Add Database Here ]
+
 
 Example:
 
@@ -126,7 +126,7 @@ MongoDB
 
 Authentication
 
-[ Add Authentication Method ]
+
 
 Example:
 
@@ -135,8 +135,6 @@ JWT
 OAuth
 
 Real-Time Communication
-
-[ Add Technology ]
 
 Example:
 
